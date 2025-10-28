@@ -1,0 +1,33 @@
+<odoo>
+  <data>
+    <record  id="stock_picking_form_inherit" model="ir.ui.view">
+      <field name="name">stock_picking_form_inherit</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_form"/>
+      <field name="arch" type="xml">
+          <xpath expr="//field[@name='origin']" position="after">
+            <field name="use_products" invisible="1"/>
+            <field name="out_move" invisible="1"/>
+        </xpath>
+          <notebook>
+              <page string="Programable Products" attrs="{'invisible': [('out_move', '=', False)]}"> <!--Cambiar si es en local o producción-->
+                  <field name="lab_task">
+                      <tree edit="0" create="0" delete="0">
+                          <field name="id" invisible="1"/>
+                          <field name="product_id"/>
+                          <field name="picking_id"/>
+                          <field name="program_product"/>
+                          <button name="start_program" string="Iniciar" class="oe_highlight" type="object" attrs="{'invisible': [('state', 'in', ('progress','done'))]}"/>
+                          <button name="end_program" string="Terminar" class="oe_highlight" type="object" attrs="{'invisible': [('state', 'in', ('draft','done'))]}"/>
+                          <field name="date_start"/>
+                          <field name="date_end"/>
+                          <field name="duration"/>
+                          <field name="state"/>
+                      </tree>
+                  </field>
+              </page>
+          </notebook>
+      </field>
+    </record>
+  </data>
+</odoo>

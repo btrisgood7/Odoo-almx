@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="product_product_form_inherit_extends" model="ir.ui.view">
+            <field name="name">product_product_form_inherit_extends</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+   <!--     <field name="inherit_id" ref="product.product_template_form_view"/>-->
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='barcode']" position="after">
+                    <field name="verification_lab"/>
+                    <field name="stock_it"/>
+                    <field name="is_laptop" attrs="{'invisible': [('stock_it','=',False)]}"/>
+                    <field name="is_cargador" attrs="{'invisible': [('stock_it','=',False)]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

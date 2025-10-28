@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="almx_program_products.list">
+      <field name="name">almx_program_products list</field>
+      <field name="model">almx_program_products.almx_program_products</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="almx_program_products.action_window">
+      <field name="name">almx_program_products window</field>
+      <field name="res_model">almx_program_products.almx_program_products</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="almx_program_products.action_server">
+      <field name="name">almx_program_products server</field>
+      <field name="model_id" ref="model_almx_program_products_almx_program_products"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="almx_program_products" id="almx_program_products.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="almx_program_products.menu_1" parent="almx_program_products.menu_root"/>
+    <menuitem name="Menu 2" id="almx_program_products.menu_2" parent="almx_program_products.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="almx_program_products.menu_1_list" parent="almx_program_products.menu_1"
+              action="almx_program_products.action_window"/>
+    <menuitem name="Server to list" id="almx_program_products" parent="almx_program_products.menu_2"
+              action="almx_program_products.action_server"/>
+-->
+  </data>
+</odoo>
