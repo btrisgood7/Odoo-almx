@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_almx_stock_extends_almx_stock_extends,almx_stock_extends.almx_stock_extends,model_almx_stock_extends_almx_stock_extends,base.group_user,1,1,1,1
